@@ -300,6 +300,16 @@ class tenmat:
         """
         return self.data.astype(np.float64).copy()
 
+    def complex(self) -> np.ndarray:
+        """
+        Convert tenmat to an array of complex
+
+        Returns
+        -------
+        Copy of tenmat data.
+        """
+        return self.data.astype(np.complex_).copy()
+
     @property
     def ndims(self) -> int:
         """Return the number of dimensions of a tenmat"""
