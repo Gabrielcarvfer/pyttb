@@ -99,8 +99,8 @@ def hosvd(  # noqa: PLR0912,PLR0913,PLR0915
 
     for k in dimorder:
         # Compute Gram matrix
-        Yk = Y.to_tenmat(np.array([k])).double()
-        Z = np.dot(Yk, Yk.transpose())
+        Yk = Y.to_tenmat(np.array([k])).complex()
+        Z = np.dot(Yk, np.matrix(Yk).getH())
 
         # Compute eigenvalue decomposition
         D, V = scipy.linalg.eigh(Z)
